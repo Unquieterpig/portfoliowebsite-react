@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
-  },
   "name": "portfoliowebsite-react",
   "version": "1.0.0",
   "description": "Portfolio website built with React, Vite, and shadcn/ui.",

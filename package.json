@@ -1,9 +1,7 @@
 {
-<<<<<<< Updated upstream
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
-=======
   "name": "portfoliowebsite-react",
   "version": "1.0.0",
   "description": "Portfolio website built with React, Vite, and shadcn/ui.",
@@ -11,15 +9,11 @@
   "license": "MIT",
   "private": true,
   "type": "module",
->>>>>>> Stashed changes
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-<<<<<<< Updated upstream
-    "deploy": "gh-pages -d build"
-=======
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -42,6 +36,5 @@
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3",
     "vite": "^5.4.11"
->>>>>>> Stashed changes
   }
 }

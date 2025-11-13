@@ -9,9 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 type Theme = "light" | "dark";
 
@@ -448,96 +445,46 @@ function Contact() {
       <Badge variant="outline" className="px-3 py-1">
         Contact
       </Badge>
-      <div className="grid gap-10 md:grid-cols-2">
-        <div className="space-y-4">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Have an idea worth exploring?
-          </h2>
-          <p className="text-base text-muted-foreground">
-            Share a little context and I&apos;ll get back within two business
-            days. Prefer email? Reach out directly at{" "}
+      <div className="space-y-6 md:max-w-3xl">
+        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Have an idea worth exploring?
+        </h2>
+        <p className="text-base text-muted-foreground">
+          Share a little context and I&apos;ll get back within two business days. Prefer email? Reach
+          out directly at{" "}
+          <a
+            href="mailto:hello@unquieterpig.com"
+            className="font-medium text-primary underline-offset-2 hover:underline"
+          >
+            hello@unquieterpig.com
+          </a>
+          . Want to chat live? Book a short call and we&apos;ll explore fit together.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild variant="outline">
             <a
-              href="mailto:hello@unquieterpig.com"
-              className="font-medium text-primary underline-offset-2 hover:underline"
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
             >
-              hello@unquieterpig.com
+              LinkedIn
             </a>
-            .
-          </p>
-          <div className="flex gap-3">
-            <Button asChild variant="outline">
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </Button>
-            <Button asChild variant="outline">
-              <a href="https://github.com/Unquieterpig" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </Button>
-          </div>
+          </Button>
+        <Button asChild variant="outline">
+          <a href="https://github.com/Unquieterpig" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </Button>
+        <Button asChild>
+          <a
+            href="https://cal.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Schedule a call
+          </a>
+        </Button>
         </div>
-        <Card>
-          <CardHeader>
-            <CardTitle>Start the conversation</CardTitle>
-            <CardDescription>
-              Tell me about the challenge you&apos;re solving.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form
-              className="space-y-4"
-              onSubmit={(event) => {
-                event.preventDefault();
-                const form = event.currentTarget;
-                form.reset();
-                const confirmation = document.getElementById("contact-confirm");
-                if (confirmation) {
-                  confirmation.classList.remove("hidden");
-                  confirmation.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" placeholder="Ada Lovelace" required />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="project">What are you building?</Label>
-                <Textarea
-                  id="project"
-                  name="project"
-                  placeholder="Share a few lines about your product, goals, and timeline."
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full">
-                Send message
-              </Button>
-            </form>
-            <p
-              id="contact-confirm"
-              className="mt-4 hidden rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm text-primary-foreground"
-              role="status"
-            >
-              Thanks for reaching out. I&apos;ll be in touch shortly.
-            </p>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
